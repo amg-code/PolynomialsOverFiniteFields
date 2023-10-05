@@ -80,32 +80,6 @@ class RichFiniteField:
                 self._unityroots[d] = self.gen**(int((self.q-_sage_const_1 )/d))
         return 
 
- 
-
-# The class RichBaseField which inherits from the class RichFiniteField additionally has the attributes 
-#   - primefactors: These are the prime factors of q-1
-#   - unityroots: The set of the p-th roots of unity, where p runs through every prime factor of q-1
-class RichBaseField(RichFiniteField):
-    def __init__(self, qq, charroot, charvar):
-        super().__init__(qq, charroot, charvar)
-
-        #Computation of prime factors of q-1 and one respective primitive root of unity:
-        self.primefactors = [fact[_sage_const_0 ] for fact in factor(self.q-_sage_const_1 )]
-        self.unityroots = dict()
-
-        for b in self.F:
-            if not b==self.zero:
-                o = b.multiplicative_order()
-                if o in self.primefactors and o not in (self.unityroots).keys():
-                    (self.unityroots).update({o: b})
-                
-                if len(self.unityroots) == len(self.primefactors):
-                    break
-        return
-    
-    def __str__(self):
-        return "RichBase"+(super().__str__())[_sage_const_8 :]+"\n"+sep+"Prime factors of "+str(self.q-_sage_const_1 )+":\n"+sep+sep+("\n"+sep+sep).join(["["+str(p)+", primitive root = "+str(self.unityroots[p])+"]" for p in self.primefactors])
-
 
 # The class RichExtensionField which inherits from the class RichFiniteField is mainly an extension of another RichFiniteField-instance such that the elements of the base field are embedded in the extension field.
 class RichExtensionField(RichFiniteField):
