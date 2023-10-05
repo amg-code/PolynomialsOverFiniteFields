@@ -19,7 +19,7 @@ However, at the moment (2023-10) it only makes use of the function Hom(F,E) for 
 
 This program is an exact implementation of the new factorization formula for polynomials of the form X^n-a over a finite field in Theorem 18 from 
 
-==="The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner [https://arxiv.org/abs/2306.11183].===
+=="The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner== [https://arxiv.org/abs/2306.11183].
 
 Furthermore, it makes use of this new algorithm to derive the factorization of polynomials of the form f(X^n) where  f is an irreducible polynomial over a finite field.
 
