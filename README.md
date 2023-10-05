@@ -19,7 +19,7 @@ However, at the moment (2023-10) it only makes use of the function Hom(F,E) for 
 
 This program is an exact implementation of the new factorization formula for polynomials of the form X^n-a over a finite field in Theorem 18 from 
 
-=="The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner== [https://arxiv.org/abs/2306.11183].
+__"The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner__ [https://arxiv.org/abs/2306.11183].
 
 Furthermore, it makes use of this new algorithm to derive the factorization of polynomials of the form f(X^n) where  f is an irreducible polynomial over a finite field.
 
@@ -29,9 +29,8 @@ The user can either enter the data interactively by changing the variable `inter
 
 The program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The wall and the CPU computation time of both algorithms are given and their ratio computed. 
 
-The new algorithm performs much better for all positive integers that are not sufficiently small. For many integers n that are "too large", the PARI stack overflows or SageMath crashes completely. The following tables shows a comparison of the computation times for some examples: 
+The new algorithm performs much better for all positive integers that are not sufficiently small. For many integers n that are "too large", the PARI stack overflows or SageMath crashes completely. 
 
-| q  | n | a | ord(a) | SageMath | AMG-Alg | ratio |
 
 ## How rich are the two RichXXClasses?
 __RichFiniteField__ 
