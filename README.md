@@ -1,5 +1,6 @@
 # PolynomialsOverFiniteFields
 This SageMath/Python repository contains the two Python classes RichFiniteField and RichPolynomial which are useful for working with univariate polynomials over different finite fields and their extensions.
+
 Additionally, you can find programs implementing my mathematical research which make use of these two classes.
 
 ## Packages
