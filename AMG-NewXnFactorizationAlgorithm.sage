@@ -271,6 +271,7 @@ def main():
                 except ValueError:
                     n = 0
     else:
+        # CHANGE HERE:
         q=8
         RFF = RichFiniteField(q,"b","X")
         b = RFF.gen
