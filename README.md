@@ -15,7 +15,7 @@ Please search for `CHANGE HERE` in the code. These words mark the changes that t
 
 The program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The computation time of both algorithms and their ratio are given afterwards. 
 
-The new algorithm performs much better for all positive integers that are not small. For many integers n that are "too large", the SageMath algorithm causes the PARI stack to overflow or SageMath to crash completely. 
+The new algorithm performs much better than the SageMath algorithm for all positive integers that are not small. For many integers n that are "too large", the SageMath algorithm causes the PARI stack to overflow or SageMath to crash completely. 
 
 
 ## How rich are the two RichXXClasses?
