@@ -11,7 +11,7 @@ __"The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner__ [https://arxiv
 
 Furthermore, it makes use of this new algorithm to derive the factorization of polynomials of the form f(X^n) where  f is an irreducible polynomial over a finite field.
 
-Please search for _CHANGE HERE_ in the code. These words mark the changes that the user can make to the program. The user can either enter the data interactively by changing the variable `interactive_input` to `True`. Otherwise just change the parameters directly in the `main()`-function. 
+Please search for `CHANGE HERE` in the code. These words mark the changes that the user can make to the program. The user can either enter the data interactively by changing the variable `interactive_input` to `True`. Otherwise just change the parameters directly in the `main()`-function. 
 
 The program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The computation time of both algorithms and their ratio are given afterwards. 
 
