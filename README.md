@@ -39,10 +39,10 @@ The class RichPolynomial needs the Python package __multiset__. Please install t
 
 You might need to restart Sage and/or your computer afterwards.
 
-Also the package __sage.coding.relative_finite_field_extension__ is used for the RichExtensionField and the computation of the order and the k-normality of a RichPolynomial. This package is marked as experimental. When used for the first time, it raises the following warning:
+The package __sage.coding.relative_finite_field_extension__ is used for the RichExtensionField and the computation of the order and the k-normality of a RichPolynomial. This package is marked as experimental. When used for the first time, it raises the following warning:
 > FutureWarning: This class/method/function is marked as experimental. It, its functionality or its interface might change without a formal deprecation.
  
-However, at the moment (2023-10) it only makes use of the function Hom(F,E) for two finite fields F and E, which is part of the standard library of SageMath.
+However, at the moment (2023-10) it only makes use of the function `Hom(F,E)` for two finite fields F and E, which is part of the standard library of SageMath.
 
 
 #### Author
