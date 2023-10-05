@@ -3,7 +3,7 @@ This SageMath/Python repository contains the two Python classes RichFiniteField 
 
 Additionally, you can find programs implementing my mathematical research which make use of these two classes.
 
-## Packages
+## Packages needed
 
 The class RichPolynomial needs the Python package __multiset__. Please install the package on your system (while Sage is running) with the command 
 >__pip install multiset__ 
@@ -23,13 +23,11 @@ __"The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner__ [https://arxiv
 
 Furthermore, it makes use of this new algorithm to derive the factorization of polynomials of the form f(X^n) where  f is an irreducible polynomial over a finite field.
 
-Please search for _CHANGE HERE_ in the code. These words mark the changes that the user can make to the program. 
+Please search for _CHANGE HERE_ in the code. These words mark the changes that the user can make to the program. The user can either enter the data interactively by changing the variable `interactive_input` to `True`. Otherwise just change the parameters directly in the `main()`-function. 
 
-The user can either enter the data interactively by changing the variable `interactive_input` to `True`. Otherwise just change the parameters directly in the `main()`-function. 
+The program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The computation time of both algorithms and their ratio are given afterwards. 
 
-The program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The wall and the CPU computation time of both algorithms are given and their ratio computed. 
-
-The new algorithm performs much better for all positive integers that are not sufficiently small. For many integers n that are "too large", the SageMath algorithm causes the PARI stack to overflow or SageMath to crash completely. 
+The new algorithm performs much better for all positive integers that are not small. For many integers n that are "too large", the SageMath algorithm causes the PARI stack to overflow or SageMath to crash completely. 
 
 
 ## How rich are the two RichXXClasses?
