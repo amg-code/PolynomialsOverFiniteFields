@@ -1,6 +1,3 @@
-# This program computes the factorization of X^n-a for any positive integer n and any element a of a finite field Fq over this finite field Fq
-# For this it uses the new formula from the paper <<The factorization of X^n-a and f(X^n)>> by Anna-Maurin Graner
-
 # ****************************************************************************
 #       Copyright (C) 2023 Anna-Maurin Graner
 #
@@ -10,6 +7,10 @@
 # (at your option) any later version.
 #                  https://www.gnu.org/licenses/
 # ****************************************************************************
+
+
+# This program computes the factorization of X^n-a for any positive integer n and any element a of a finite field Fq over this finite field Fq
+# For this it uses the new formula from the paper <<The factorization of X^n-a and f(X^n)>> by Anna-Maurin Graner
 
 import time 
 from RichPolynomialClass import *
@@ -62,11 +63,12 @@ def str_comparison(Xna, RFF, n, fa):
         return "\n"+str(RFF.q)+sep+str(n)+sep+str(factor(n))+sep+str(fa.list)+sep+str(fa.get_order())+sep+str((((comparison[6])[-1])[0]).degree())+sep+str(comparison[0])+sep+str(comparison[2])+sep+str(comparison[4])+sep+str(comparison[5])
 
 def measurements():
-    name = "phdtable"
+    #CHANGE HERE
+    name = ""
     Xnas = [(31, 675, "1"),(31, 675, 2),(31, 6075, "2"),(8, 7^4, "1"), (8, 7^4, "b"), (16, 675, "1"),(7, 648, 2), (7, 7776, 2), (7, 23328, 2),(8, 3*7^4, "1")]
     fXns = [(4, 3^4, [1,0,"b",1])] 
 
-    filepath = "/home/uni/Unibox Rostock/Dissertation/2023-04 Entwurf/examples/"
+    filepath = "/home/"
     sep = "\t"
 
     table_header_Xna = "\n\nq"+sep+"n"+sep+"factor(n)"+sep+"a"+sep+"ord(a)"+sep+"max deg"+sep+"New AMG Alg"+sep+"SageMath Alg"+sep+"AMG/SM"+sep+"SM/AMG"
