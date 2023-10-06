@@ -3,19 +3,28 @@ This SageMath/Python repository contains the two Python classes RichFiniteField 
 
 Additionally, you can find programs implementing my mathematical research which make use of these two classes.
 
-## AMG-NewXnFactorizationAlgorithm.sage
+## Packages needed
 
-This program is an exact implementation of the new factorization formula for polynomials of the form X^n-a over a finite field in Theorem 18 from 
+The class RichPolynomial needs the Python package __multiset__. Please install the package on your system (while SageMath is running) with the command 
+>sage: __pip install multiset__ 
 
-__"The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner__ [https://arxiv.org/abs/2306.11183].
+You might need to restart SageMath and/or your computer afterwards. (Entering `exit` shuts down the SageMath console)
 
-Furthermore, it makes use of this new algorithm to derive the factorization of polynomials of the form f(X^n) where  f is an irreducible polynomial over a finite field.
 
-Please search for `CHANGE HERE` in the code. These words mark the changes that the user can make to the program. The user can enter the data interactively by changing the variable `interactive_input` to `True`. Otherwise just change the parameters directly in the `main()`-function. 
+## The new X^n factorization algorithm
 
-The program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The computation time of both algorithms and their ratio are given afterwards. 
+The file __AMGXnFactorization.py__ contains the new factorization algorithm for polynomials of the form X^n-a or f(X^n) as presented in  __"The factorization of X^n-a and f(X^n)" by Anna-Maurin Graner__ [https://arxiv.org/abs/2306.11183].
 
-The new algorithm performs much better than the SageMath algorithm for all positive integers that are not small. For many integers n that are "too large", the SageMath algorithm either takes ages (does not return a result after a reasonable amount of time), causes the PARI stack to overflow or SageMath to crash completely. 
+For this, 
+- `factorization_Xn_a(RFF, n, alpha)`, where `RFF` is a RichFiniteField and alpha an element of the FiniteField `RFF.F`.
+  This function is an exact implementation of the new factorization formula  in Theorem 18 from the paper mentioned above.
+- `factorization_fXn(f,n)`, where `f` is a RichPolynomial over a RichFiniteField Fq. This function calls `factorization_Xn_a` for a root alpha of the polynomial f and the splitting field of f. Then Theorem 3 (due to Mullin,Mullen,Yucas 2010) is applied and the q-spin of all irreducible factors computed. 
+
+The file __TestNewAlgorithm.sage__ is meant for using or testing the new factorization functions from AMGXnFactorization.py. Please search for `CHANGE HERE` in the code. These words mark the changes that the user can make to the program. The user can enter the data interactively by changing the variable `interactive_input` to `True`. Otherwise just change the parameters directly in the `main()`-function. If the variable `comparison` is set to `True`, the program first computes the factorization with the new algorithm and then with the existing SageMath-algorithm `factor()` for elements of PolynomialRings. This algorithm is based on PARI. The computation time of both algorithms and their ratio are given afterwards. 
+
+There exists another function called `measurements()` which can be used for measuring and comparing the computation times of the new algorithm and the SageMath algorithm (PARI) for many examples at the same time without looking at the factorizations themselves. For this, please specify the `filepath` and `name` that you would like to give to your file. 
+
+The new algorithm performs much better than the SageMath algorithm. For many integers n that are "too large" (for f(X^n) even n=81 can be too large), the SageMath algorithm either takes ages (does not return a result after a reasonable amount of time), causes the PARI stack to overflow or SageMath to crash completely. 
 
 
 ## How rich are the two RichXXClasses?
@@ -32,12 +41,7 @@ This class stores a polynomial over a given finite field (stored as a RichFinite
 It is enRICHed with many functions, some of which are redirections to existing SageMath-functions, many others are new implementations. 
 All functions are split into private functions doing the computations and storing the result in a class attribute and a public function returning this attribute. This has the big advantage that all computations are done exactly once and only if needed. 
 
-## Packages needed
-
-The class RichPolynomial needs the Python package __multiset__. Please install the package on your system (while Sage is running) with the command 
->__pip install multiset__ 
-
-You might need to restart Sage and/or your computer afterwards.
+## Dependencies
 
 The package __sage.coding.relative_finite_field_extension__ is used for the RichExtensionField and the computation of the order and the k-normality of a RichPolynomial. This package is marked as experimental. When used for the first time, it raises the following warning:
 > FutureWarning: This class/method/function is marked as experimental. It, its functionality or its interface might change without a formal deprecation.
