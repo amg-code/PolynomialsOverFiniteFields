@@ -13,7 +13,7 @@ Additionally, you can find programs implementing my mathematical research which 
 ## Packages needed
 
 The class RichPolynomial needs the Python package __multiset__. Please install the package on your system (while SageMath is running) with the command 
-```sage: __pip install multiset__ ```
+>sage: __pip install multiset__
 
 You might need to restart SageMath and/or your computer afterwards. (Entering `exit` shuts down the SageMath console)
 
