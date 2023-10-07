@@ -1,4 +1,7 @@
 # PolynomialsOverFiniteFields
+
+This repository is licensed under the terms of the GNU General Public License v3.0 (GPL-3.0).
+
 This SageMath/Python repository contains the two Python classes RichFiniteField and RichPolynomial which are useful for working with univariate polynomials over different finite fields and their extensions.
 
 Additionally, you can find programs implementing my mathematical research which make use of these two classes.
