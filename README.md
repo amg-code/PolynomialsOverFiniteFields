@@ -3,10 +3,17 @@ This SageMath/Python repository contains the two Python classes RichFiniteField 
 
 Additionally, you can find programs implementing my mathematical research which make use of these two classes.
 
+### Table of contents:
+- [Packages needed](https://github.com/amg-code/PolynomialsOverFiniteFields#packages-needed)
+- [The new X^n factorization algorithm](https://github.com/amg-code/PolynomialsOverFiniteFields#the-new-xn-factorization-algorithm)
+- [How rich are the two RichClasses?](https://github.com/amg-code/PolynomialsOverFiniteFields#how-rich-are-the-two-richxxclasses)
+- [Dependencies](https://github.com/amg-code/PolynomialsOverFiniteFields#dependencies)
+- [Author](https://github.com/amg-code/PolynomialsOverFiniteFields#author)
+
 ## Packages needed
 
 The class RichPolynomial needs the Python package __multiset__. Please install the package on your system (while SageMath is running) with the command 
->sage: __pip install multiset__ 
+```sage: __pip install multiset__ ```
 
 You might need to restart SageMath and/or your computer afterwards. (Entering `exit` shuts down the SageMath console)
 
@@ -27,7 +34,7 @@ There exists another function called `measurements()` which can be used for meas
 The new algorithm performs much better than the SageMath algorithm. For many integers n that are "too large" (for f(X^n) even n=81 can be too large), the SageMath algorithm either takes ages (does not return a result after a reasonable amount of time), causes the PARI stack to overflow or SageMath to crash completely. 
 
 
-## How rich are the two RichXXClasses?
+## How rich are the two RichClasses?
 __RichFiniteField__ 
 
 This class stores a SageMath FiniteField together with its PolynomialRing so that these two can be treated as a unit and used together. The finite field will always be of a primitive modulus so that primitive roots of unity in this finite field can easily be constructed by taking the generator to the respective exponent. 
