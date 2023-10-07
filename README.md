@@ -6,7 +6,7 @@ Additionally, you can find programs implementing my mathematical research which 
 ### Table of contents:
 - [Packages needed](https://github.com/amg-code/PolynomialsOverFiniteFields#packages-needed)
 - [The new X^n factorization algorithm](https://github.com/amg-code/PolynomialsOverFiniteFields#the-new-xn-factorization-algorithm)
-- [How rich are the two RichClasses?](https://github.com/amg-code/PolynomialsOverFiniteFields#how-rich-are-the-two-richxxclasses)
+- [How rich are the two RichClasses?](https://github.com/amg-code/PolynomialsOverFiniteFields#how-rich-are-the-two-richclasses)
 - [Dependencies](https://github.com/amg-code/PolynomialsOverFiniteFields#dependencies)
 - [Author](https://github.com/amg-code/PolynomialsOverFiniteFields#author)
 
