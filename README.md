@@ -36,6 +36,23 @@ There exists another function called `measurements()` which can be used for meas
 
 The new algorithm performs much better than the SageMath algorithm. For many integers n that are "too large" (for f(X^n) even n=81 can be too large), the SageMath algorithm either takes ages (does not return a result after a reasonable amount of time), causes the PARI stack to overflow or SageMath to crash completely. 
 
+Some CPU computation time comparisons between the two algorithms (2023-10-09):
+| q | n  | ord(a) | SageMath | AMG-Alg | ratio|
+|--- | --- | --- | --- | --- | --- |
+| s=1| 
+| 31 | 675 = 3^3*5^2 | 1 | 0.0515 s | 0.0112 s| 4 : 1|
+| 31 | 675 = 3^3*5^2 | 5 | 0.1440 s | 0.0022 s| 65 : 1|
+| 31 | 6075 = 3^5*5^2 | 5 | 11.1543 s | 0.0149 s | 748 : 1| 
+|31| 759375 = 3^5*5^5 | 5 | $\infty$ s | 3.3683 s | |
+|31 | 
+| s=2 |
+| 11 | 400 = 2^2*5^2 | 10|0.0570 s| 0.0093 s| 6 : 1|
+| 11 | 10000= 2^4*5^4 | 10 | 220.2496 s | 0.1791 s | 1229 : 1| 
+|11| 100000= 2^5*5^5 | 10| $\infty$ s | 3.3107 s | $\infty$ : 1 |
+|11| 1000000 = 2^6*5^6 | 10 | | 348.5296 s | $\infty$ : 1 |
+
+Note that s is the degree of the extension field over Fq where the computations are carried out.
+
 
 ## How rich are the two RichClasses?
 __RichFiniteField__ 
